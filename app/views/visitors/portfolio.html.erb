@@ -1,0 +1,87 @@
+	<% @pimages = Photo.where(page_name: "portfolio") %>
+	<% @card_1 = @pimages.find_by(sequence: 1) %>
+</head>
+<body>
+    <header>
+      <div class="collapse bg-dark" id="navbarHeader">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-8 col-md-7 py-4">
+              <h4 class="text-white">Menu</h4>
+              <%= link_to "Home", "/" , :class =>"text-white"%><br>
+              <%= link_to "My Web Services", "/features" , :class =>"text-white"%><br>
+            </div>
+            <div class="col-sm-4 offset-md-1 py-4">
+              <h4 class="text-white">Contact</h4>
+              <ul class="list-unstyled">
+                <li><a href="https://www.linkedin.com/in/damonhopkins" class="text-white">Linked-In</a></li>
+                <li><a href="https://www.github.com/oxygen545" class="text-white">Github</a></li>
+                <li><a href="/contact" class="text-white">Send a Message</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="navbar navbar-dark bg-dark box-shadow">
+        <div class="container d-flex justify-content-between">
+          <a href=#" class="navbar-brand d-flex align-items-center">
+            <strong>My Portfolio</strong>
+          </a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">Links &raquo;&nbsp;<span class="navbar-toggler-icon"></span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+   <main role="main">
+      <section class="jumbotron text-center">
+        <div class="container">
+          <h1 class="jumbotron-heading text-muted">A Little Introduction</h1>
+          <p class="lead text-muted">Several years ago I moved 1200 miles from my home of over 15 years to move back to Texas for family matters. I was laid off during that time and started a new career. It was fun for awhile but 7 years later I miss coding as as fortune favors me, I was an accident and have been unable to work for the last several month. I started looking back at my old career and decided I needed to do something about it. I've learned a new language, some of the basics of the frameworks available today, all the great things javascript has become and decided to get back to writing code again. Some of the names have changed but the game is the same.</p>
+          <p>That being said some of these examples are old and outdated but the fact these applications I helped design and run are still going with the same old code some 6-10 years later.. </p>
+        </div>
+      </section>
+
+      <div class="album py-5 bg-light">
+        <div class="container">
+
+          <div class="row">
+            <div class="col-xs-4">
+              <div class="card mb-4 box-shadow">
+                <%= image_tag url_for(@card_1.image), :class => "card-img-top", :theme => "thumb", :alt => @card_1.caption, :width=>"100px" %>
+                <div class="card-body">
+                  <p class="card-text">The big project I worked on was an EDI Mapping Portal Service using VB 5, then C++ and eventually C#. Clients would use our web-based service to do their X12 mapping translations for the transmission of electronic data between to different legacy systems in a scified protocol. We positioned outrselves into being a SaaS provider and you can still read the old press releases as well as look through the old documentation. The project started off as a VB5 app running on 2 large DEC Alpha servers with NT Server running IIS. We also managed the internal network of offices and all the internal and external support and service calls. We built ourselves an Astrix based PBX phone system and integrated that into our network as well. Occasionally we had local clients and serviced them with other developmental needs. A client needed to migrate from using Novell Netware 5 to NT Server Platform and I did that as well as a lot of work on their shared Microsoft Access database which managed the entire company I think. it was a database built like an desktop application. Thanks Form Wizard. . Besides that we did other fn projects like integrate a UMich Directory server for which I wrote the server side API service and another employee built the client plug in for our windows NT machines so we could have a centralized directory to authenticate to. This is common practice now and every one does it. But back then you authentecated to a domain and it was an entire diffrent beast. We wrote scripts and helpers, wherever needed, so it because our all-in-one authenticator. A year or so later Microsoft announced they too had a directory server. Netscape used it first commercially for their browser product but I came up with the Authentication Server because we had a legacy Unix authentication system and a seperate Windows based one. Built it all from scratch in C and C++ back then, now it's a plugin and you use OMNIAuth or something similar. But back in 1999 or whatever year that was, I think we were the only ones doing it. I left the company for a few years to pursue some classes at the University and start a family</p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                      <a href="https://www.rtsz.com"><button type="button" class="btn btn-sm btn-outline-secondary">Research Triangle Software</button></a>
+                    </div>
+                    <small class="text-muted"></small>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-xs-4">
+              <div class="card mb-4 box-shadow">
+                <%= image_tag url_for(@card_1.image), :class => "card-img-top", :theme => "thumb", :alt => @card_1.caption %>
+                <div class="card-body">
+                  <p class="card-text" color="white">When I returned a few years later I worked on a large scale email branding service utilizing a custom built microsoft outlook api plug in to manipulate outgoing mail to ensure a consistant look and feel went out with each email. They are still using the same system I worked on from almost 10 years ago. Complete with the same home They appear to have stopped selling the <a href="http://www.lettermark.com/LetterMark-encryption-feature.htm" />Lettermark Encryption Plug-in for MS Outlook</a> I presume due to the fact that it is akin to hacking your own email. We had to catch the message before it sent but after the security checks and Microsoft tries to make the message secure. We also developed our own suite of portable applications and a stand alone encryption product as well. You can see those things and poke around in the support wiki and see more about what I did there. Many people worked to build the lettermark system but the portable security suite were mainly developed by myself and one other developer. The entire suite of applications were registered and updated via an Active-X plugin we built our own license applications and used the webupdate system to validate ownership of the device buy generating a device specific license file to prevent piracy or the software. It was pretty fancy for it's day. The order of events were to log-in pick your device from those our plugin detected. At the time 512 MB USB devices were all the rage. We sold quite a few. You can see some of my Letermark work still in the <a href="http://support.rtsz.com/mw/index.php?limit=100&tagfilter=&title=Special%3AContributions&contribs=user&target=dhopkins%40rtsz.com&namespace=&associated=1&year=&month=-1">logs</a> from a long time ago</p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                      <a href="http://www.rtsz.com/2007/07/"><button type="button" class="btn btn-sm btn-outline-secondary">Visit the Old press Releases</button></a>
+                      <a href="https://webupdate.rtsz.com"><button type="button" class="btn btn-sm btn-outline-secondary">Webupdate Site</button></a>
+                    </div>
+                    <small class="text-muted"></small>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+    </main>
+          <footer class="text-white">
+          <div class="container">
+            <p class="float-left"><%= @site_title %> &copy; 2018</p>
+          </div>
+        </footer>

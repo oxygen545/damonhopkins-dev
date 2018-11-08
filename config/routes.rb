@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
   get "/contact" => "messages#new"
   get "/thanks" => "messages#thanks"
+  get "/portfolio" => "visitors#portfolio"
   get "/cover" => "visitors#cover"
   get "/features" => "visitors#features"
   get "/static_pages" => "visitors#static_pages"
