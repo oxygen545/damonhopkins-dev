@@ -1,6 +1,7 @@
 	<% @pimages = Photo.where(page_name: "portfolio") %>
 	<% @card_1 = @pimages.find_by(sequence: 1) %>
 	<% @card_2 = @pimages.find_by(sequence: 2) %>
+	<% @card_3 = @pimages.find_by(sequence: 3) %>
 </head>
 <body>
     <header>
@@ -38,16 +39,32 @@
       <section class="jumbotron text-center">
         <div class="container">
           <h1 class="jumbotron-heading text-muted">A Little Introduction</h1>
-          <p class="lead text-muted">Several years ago I moved 1200 miles from my home of over 15 years to move back to Texas for family matters. I was laid off during that time and started a new career. It was fun for awhile but 7 years later I miss coding as as fortune favors me, I was an accident and have been unable to work for the last several month. I started looking back at my old career and decided I needed to do something about it. I've learned a new language, some of the basics of the frameworks available today, all the great things javascript has become and decided to get back to writing code again. Some of the names have changed but the game is the same.</p>
-          <p>That being said some of these examples are old and outdated but the fact these applications I helped design and run are still going with the same old code some 6-10 years later.. </p>
+          <p class="lead text-muted">Several years ago I moved 1200 miles from my home of over 15 years to move back to Texas for family matters. I was laid off during that time and started a new career.</p>
+          <p>It was fun for awhile but 7 years or so later I started to miss coding and as fortune favors me, I was an accident and have been unable to work for the last several months. I started looking back at my prevous life and decided I needed to do something about it. I've learned a new language, some of the basics of the popular frameworks used today, and all the great things javascript has been doing since I left. I decided to get back to writing code again. Some of the names have changed but the game is the same.</p>
+          <p>That being said, some of these examples are old and outdated but the fact that these applications, I helped design and run, are still going with the same old code some 6-10 years later hakes me happy.</p>
         </div>
       </section>
 
       <div class="album py-5 bg-light">
-        <div class="container">
+        <div class="container d-flex">
 
-          <div class="row">
-            <div class="col-xs-4">
+		<div class="row">
+			<div class="col-md-4">
+			  <div class="card mb-4 box-shadow">
+			    <%= image_tag url_for(@card_3.image), :class => "card-img-top", :theme => "thumb" %>
+			    <div class="card-body">
+			      <p class="card-text">A new portal site project for an existing shop. The owner primarily sells items throught their existign Etsy shop but wanted to have their own domain to shocase product sales, provide a single location to act as an information portal site as well as manage an email list and post relevant buisiness related articles</p>
+			      <div class="d-flex justify-content-between align-items-center">
+			        <div class="btn-group">
+			          <a href="https://www.github.com/oxygen545/fmn-apothecary"><button type="button" class="btn btn-sm btn-outline-secondary">GitHub</button></a>&nbsp;
+			          <a href="https://fmn-apothecary.herokuapp.com/"><button type="button" class="btn btn-sm btn-outline-secondary">Forget-Me-Not Portal Site</button></a>
+			        </div>
+			        <small class="text-muted"></small>
+			      </div>
+			    </div>
+			  </div>
+			</div>
+            <div class="col-md-4">
               <div class="card mb-4 box-shadow">
                 <%= image_tag url_for(@card_1.image), :class => "card-img-top", :theme => "thumb" %>
                 <div class="card-body">
@@ -61,7 +78,7 @@
                 </div>
               </div>
             </div>
-            <div class="col-xs-4">
+            <div class="col-md-4">
               <div class="card mb-4 box-shadow">
                 <%= image_tag url_for(@card_2.image), :class => "card-img-top", :theme => "thumb" %>
                 <div class="card-body">
