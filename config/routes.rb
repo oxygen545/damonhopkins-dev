@@ -5,8 +5,11 @@ Rails.application.routes.draw do
   root to: "visitors#cover"
   devise_for :users
   resources :users
+  resources :messages
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
+  get "/contact" => "messages#new"
+  get "/thanks" => "messages#thanks"
   get "/cover" => "visitors#cover"
   get "/features" => "visitors#features"
   get "/static_pages" => "visitors#static_pages"

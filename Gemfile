@@ -43,7 +43,7 @@ gem 'sprockets'
 gem 'google-cloud-storage'
 gem 'seed_dump'
 gem 'rails-ujs'
-
+gem "bootstrap_form", ">= 4.0.0"
 group :production do
   gem 'pg'
 end
