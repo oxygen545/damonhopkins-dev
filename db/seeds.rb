@@ -1,11 +1,11 @@
 AdminUser.create!([
-  {email: "admin@example.com", password: "password", password_confirmation: "password"}
+  {email: "damon@hopkins-family.org", password: "password", password_confirmation: "password"}
 ])  
 User.create!([
   {username: "Damon Hopkins", email: "damon@hopkins-family.org", password: "password", password_confirmation: "password"}
 ])
 Photo.create!([
-  {page_name: "cover", caption: "Jenny and baby Lizzy 1996", sequence: 1},
+  {page_name: "cover", caption: "Empty Pic", sequence: 1},
 ])
 Style.create!([
   {stylename: "Default Reds", description: "DarkRed Coral and Tomato", primary_font: "Roboto", secondary_font: "Lobster Two", alt_font: "Times New Roman", primary_color: "#ff1616", secondary_color: "#ae0000", alt_color: "#ffd2c5"},
