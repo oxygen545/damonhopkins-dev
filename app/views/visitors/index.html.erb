@@ -1,9 +1,6 @@
-<%= raw(get_style Item.find(1)) %>
-<% @style = Style.find(1) %>
-<% @page_link = "/visitors/slavery" %>
-<% @images = Photo.where(page_name: "index") %>
-<% @image_one = @images.find_by sequence: "1" %>
-<% @image_two = @images.find_by sequence: "2" %>
+<%= raw(get_style Item.take) %>
+<% @style = Style.take %>
+<% @page_link = "/items" %>
 <style>
 .row {
   width: "75%";
@@ -31,13 +28,16 @@ h2 {
 </head>
   <body class="text-align" style="background-color: black;">
     <p id="notice" class="notice"><%= notice %></p>
-      <div class="row"><div class="col-sm-12" style="padding-top: 1rem; padding-bottom: 1rem;"><a href="<%= @page_link %>" style="float: left; padding-left: 7.5rem;"><%= image_tag @image_one.image, :style => "width: 15rem;"%></a><a href="<%= @page_link %>" style="float: right; padding-right: 7.5rem;"><%= image_tag @image_two.image , :style =>"width: 10rem;"%></a></div></div>
-      <div class="row center"><div class="col-sm-12 pf pc"><h2><%= link_to "\"Who is", @page_link %></h2></div></div>
-      <div class="row text-center"><div class="col-sm-12 pf pc"><h1><%= link_to raw("James K.<br>Polk?\""), @page_link %>  </h1></div></div>
-      <div class="row text-center"><div class="col-sm-12 pf pc" style="padding-top: 2rem;"><%= link_to raw("<h4>A New Play By<br>Kevin Alcock</h4>"), @page_link %></div></div>
-      <div class="row mx-auto" style="width:75%;">
-        <div class="col pf pc" style="text-align: left; padding-top: 3.25rem;"><%= link_to raw("<h4>Directed By<br>Anne Connolly</h4>"), @page_link %></div>
-        <div class="col pf pc" style="text-align: right; padding-top: 3.25rem;"><%= link_to raw("<h4>With Neal Mayer<br>as James K. Polk</h4>"),@page_link  %></div>
+      <div class="row">
+        <div class="col-sm-12" style="padding-top: 1rem; padding-bottom: 1rem;">
+          <a href="<%= @page_link %>" style="float: left; padding-left: 7.5rem;">
+            <a href="<%= @page_link %>" style="float: right; padding-right: 7.5rem;"></a>
+          </div>
+        </div>
+      <div class="row center">
+        <div class="col-sm-12 pf pc">
+          <h1><%= link_to "Jesse Osborne", @page_link %></h1>
+        </div>
       </div>
     <% copyrt = "&copy;" %>
     <div class="row fixed-bottom navbar" style="width: 100%; padding-top: 1rem; padding-bottom: 0;">

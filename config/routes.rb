@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   resources :messages
   resources :visitors
   resources :photos
-  root to: "visitors#index"
+  root to: "items#index"
   devise_for :users
   resources :users
   resources :items
