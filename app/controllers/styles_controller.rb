@@ -1,6 +1,7 @@
 class StylesController < InheritedResources::Base
-	def new
-		if user_signed_in? 
+	def create
+		if user_signed_in?
+			@style = Style.new(params[:style].permit(:stylename, :description, :primary_font, :secondary_font, :primary_color, :secondary_color, :alt_font, :alt_color))
 		else 
 			redirect_to "/users/sign_in"
 		end 
@@ -22,7 +23,8 @@ class StylesController < InheritedResources::Base
 	end
 	
 	def index
-		if user_signed_in? 
+		if user_signed_in?
+			@styles = Style.all
 		else 
 			redirect_to "/users/sign_in"
 		end 

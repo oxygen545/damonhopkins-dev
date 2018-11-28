@@ -1,7 +1,8 @@
 class ItemsController < InheritedResources::Base
 
-	def new
+	def create
 		if user_signed_in? 
+			@item = Item.new(params[:item].permit(:title, :heading, :body, :style_id, :user_id, :photo_id))
 		else 
 			redirect_to "/users/sign_in"
 		end 
@@ -17,6 +18,7 @@ class ItemsController < InheritedResources::Base
 
 	def edit
 		if user_signed_in? 
+			@item = Item.find(params[:id])
 		else 
 			redirect_to "/users/sign_in"
 		end 
@@ -24,14 +26,22 @@ class ItemsController < InheritedResources::Base
 	
 	def index
 		if user_signed_in? 
+			@items = Item.all
 		else 
 			redirect_to "/users/sign_in"
 		end 
 	end
 
+	def destroy
+		if user_signed_in? 
+		else 
+			redirect_to "/users/sign_in"
+		end 		
+	end
+
 	def delete
 		if user_signed_in? 
-			self.destroy
+	#		self.destroy
 		else 
 			redirect_to "/users/sign_in"
 		end 
